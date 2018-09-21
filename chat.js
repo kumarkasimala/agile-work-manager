@@ -10,7 +10,7 @@ var Chatusers = (function () {
         this.name = "";
         this.status = 3003;
     }
-
+// this is Ajax connect
     Chatusers.prototype.AjaxConnect = {
 
         connect: function (url, data, Respfn) {
