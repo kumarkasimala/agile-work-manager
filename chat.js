@@ -5,12 +5,13 @@ var Chatusers = (function () {
     	 this.STATUS_AWAY=2002;
          this.STATUS_OFF=3003;
     }
-
+//This is a test change for github.
+//CHange 2.
     function User() {
         this.name = "";
         this.status = 3003;
     }
-
+// this is Ajax connect
     Chatusers.prototype.AjaxConnect = {
 
         connect: function (url, data, Respfn) {
