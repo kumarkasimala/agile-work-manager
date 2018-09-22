@@ -40,6 +40,15 @@
                     var dev = new DevEngineer(window.devs[i].name, window.devs[i].Id, window.devs[i].emailId, window.devs[i].contact);
                     allDevs.push(dev);
                 }
+                for (var i = 0; i< window.qas.length; i++){
+                    var qa = new QaEngineer(window.qas[i].name, window.qas[i].Id, window.qas[i].emailId, window.qas[i].contact);
+                    allQAs.push(qa);
+                }
+                for (var i =0; i< window.mngrs.length; i++){
+                    var mngr = new Manager(window.mngrs[i].name, window.mngrs[i].Id, window.mngrs[i].emailId, window.mngrs[i].contact);
+                    allMnrs.push(mngr);
+                }
+
 
 
                 //QAs
@@ -64,6 +73,8 @@
 
             window.onload = function(){
                addToPage(allDevs, "devcontainer");
+               addToPage(allQAs,"qacontainer");
+               addToPage(allMnrs, "mngrcontainer");
 
             }</script>
 
@@ -86,6 +97,11 @@
     <div>
        <div class="title">All QAs are here</div> 
         <div id="qacontainer">
+        </div>
+    </div>
+    <div>
+        All Managers are here
+        <div id="mngrcontainer">
         </div>
     </div>
 </body>
