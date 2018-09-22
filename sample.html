@@ -1,0 +1,54 @@
+﻿<html>
+<head>
+    <script src="UserModels.js" type="text/javascript"></script>
+    <script src="data.js" type="text/javascript"></script>
+    <script type="text/javascript">var allDevs = [];
+                var allMnrs = [];
+                var allQAs = [];
+
+                for (var i = 0; i < window.devs.length; i++) {
+                    var dev = new DevEngineer(window.devs[i].name, window.devs[i].Id, window.devs[i].emailId, window.devs[i].contact);
+                    allDevs.push(dev);
+                }
+
+
+                //QAs
+
+                //Man
+
+                //SM
+
+                //PO
+
+
+            function addToPage(objects, domId) {
+
+                    for (var i = 0; i < objects.length; i++) {
+                        var div = document.createElement("div");
+                        div.innerHTML = "<p>"+ objects[i].getName() + "</p>" + "<p>" + objects[i].getContact() + "</p>" ;
+                        div.id = objects[i].getId();
+                        document.getElementById(domId).appendChild(div);
+                    }
+            }
+
+            window.onload = function(){
+               addToPage(allDevs, "devcontainer");
+
+            }</script>
+
+
+</head>
+<body>
+    <div>
+        All devs are here
+        <div id="devcontainer">
+        </div>
+    </div>
+
+    <div>
+        All QAs are here
+        <div id="qacontainer">
+        </div>
+    </div>
+</body>
+</html>
