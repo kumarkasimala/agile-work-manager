@@ -114,7 +114,6 @@ var Chatusers = (function () {
                 }
             }
 
-
         }
 
         return userUtil;
