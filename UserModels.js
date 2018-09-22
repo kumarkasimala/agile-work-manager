@@ -53,10 +53,6 @@ function DevEngineer(name, Id, emailId, contact){
 DevEngineer.prototype = Object.create(Employee.prototype);
 DevEngineer.prototype.constructor = Employee;
 
-var dev = new DevEngineer("Kumar", 121, "kumark@gmail.com", "129292933");
-
-dev.getType()
-dev.setAge(20);
 
 function QaEngineer(name, Id, emailId, contact){
   Employee.call(this, name, Id, emailId, contact, "QA");
