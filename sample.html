@@ -35,6 +35,7 @@
     <script type="text/javascript">var allDevs = [];
                 var allMnrs = [];
                 var allQAs = [];
+                var allPOs =[];
 
                 for (var i = 0; i < window.devs.length; i++) {
                     var dev = new DevEngineer(window.devs[i].name, window.devs[i].Id, window.devs[i].emailId, window.devs[i].contact);
@@ -47,6 +48,10 @@
                 for (var i =0; i< window.mngrs.length; i++){
                     var mngr = new Manager(window.mngrs[i].name, window.mngrs[i].Id, window.mngrs[i].emailId, window.mngrs[i].contact);
                     allMnrs.push(mngr);
+                }
+                for(var i=0; i< window.pos.length; i++){
+                    var po = new ProductOwner(window.pos[i].name, window.pos[i].Id, window.pos[i].emailId, window.pos[i].contact);
+                    allPOs.push(po);
                 }
 
 
@@ -66,7 +71,7 @@
                         var tr = document.createElement("tr");
                         tr.innerHTML = "<td>"+ objects[i].getName() + "</td>" + "<td>" + objects[i].getContact() + "</td>"+ "<td>" + objects[i].getType() + "</td>" ;
                         tr.id = objects[i].getId();
-                        tr.className= objects[i].getType()+"-child";
+                        tr.className= objects[i].getType()+"child";
                         document.getElementById(domId).appendChild(tr);
                     }
             }
@@ -75,6 +80,7 @@
                addToPage(allDevs, "devcontainer");
                addToPage(allQAs,"qacontainer");
                addToPage(allMnrs, "mngrcontainer");
+               addtoPage(allPOs, "pocontainer")
 
             }</script>
 
@@ -99,7 +105,6 @@
         <div id="qacontainer">
         </div>
     </div>
-<<<<<<< HEAD
 
     <div>
         All  SMs are here
@@ -107,13 +112,18 @@
             
         </div>
     </div>
-
-=======
     <div>
-        All Managers are here
-        <div id="mngrcontainer">
-        </div>
+        <div>All POs are here</div>
+        <table style="width:100%" id="pocontainer">
+            <tr>
+                <th>Name</th>
+                <th>Conact-Info</th>
+                <th>Type</th>
+                
+            </tr>
+
+        </table>
     </div>
->>>>>>> c2f02e1613637a2180000cf37febe05b1882a5fe
+
 </body>
 </html>
