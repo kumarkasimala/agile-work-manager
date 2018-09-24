@@ -5,7 +5,7 @@ const Test = props => {
 
   return (
     <div className="test">
-      Test Component
+      Kumar Kasimala
     </div>
   );
 };
