@@ -20,7 +20,7 @@ window.mngrs = [
 {name:"MnSandeep", age:"20", contact:"dd", Id:"13", emailId:"sandeep@gmail.com"}
 ]
 
-window.scrm = [
+window.scrmMaster = [
     {name:"MnKumar", age:"30", contact:"28383833", Id:"12", emailId:"kumarK@gmail.com"},
     {name:"MnSandeep", age:"20", contact:"dd", Id:"13", emailId:"sandeep@gmail.com"}
     {name:"MnKumar", age:"30", contact:"28383833", Id:"12", emailId:"kumarK@gmail.com"},

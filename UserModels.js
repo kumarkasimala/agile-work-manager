@@ -3,7 +3,7 @@
 
 //User Class
 
-var userTypes=["Dev", "QA", "Manager", "SM", "PO"];
+var userTypes=["Dev", "QA", "Manager", "scrumMaster", "PO"];
 
 function User(name, Id, emailId, contact, type) {
 
@@ -59,6 +59,13 @@ function QaEngineer(name, Id, emailId, contact){
 
 QaEngineer.prototype = Object.create(Employee.prototype);
 QaEngineer.prototype.constructor = Employee;
+
+function scrumMaster(name, Id, emailId, contact){
+  Employee.call(this, name, Id, emailId, contact, "scrumMaster");
+}
+
+scrumMaster.prototype = Object.create(Employee.prototype);
+scrumMaster.prototype.constructor = Employee;
 
 function Manager(name, Id, emailId, contact){
 Employee.call(this, name, Id, emailId, contact, "Manager");
