@@ -35,7 +35,8 @@
     <script type="text/javascript">var allDevs = [];
                 var allMnrs = [];
                 var allQAs = [];
-                var allscrms =[];
+                var allPOs =[];
+                var allScrumMaster =[];
 
                 for (var i = 0; i < window.devs.length; i++) {
                     var dev = new DevEngineer(window.devs[i].name, window.devs[i].Id, window.devs[i].emailId, window.devs[i].contact);
@@ -45,21 +46,38 @@
                     var qa = new QaEngineer(window.qas[i].name, window.qas[i].Id, window.qas[i].emailId, window.qas[i].contact);
                     allQAs.push(qa);
                 }
+                
+                for (var i =0; i< window.ScrmMaster.length; i++){
+                    var mngr = new ScrmMaster(window.ScrmMaster[i].name, window.ScrmMaster[i].Id, window.ScrmMaster[i].emailId, window.ScrmMaster[i].contact);
+                    allMnrs.push(mngr);
+            
                 for (var i =0; i< window.mngrs.length; i++){
                     var mngr = new Manager(window.mngrs[i].name, window.mngrs[i].Id, window.mngrs[i].emailId, window.mngrs[i].contact);
                     allMnrs.push(mngr);
                 }
-                for (var i = 0; i < window.scrm.length; i++) {
-                    var scrm = new scrumManager(window.scrm[i].name, window.scrm[i].Id, window.scrm[i].emailId, window.scrm[i].contact);
-                    allscrms.push(scrm);
-              
+                for(var i=0; i< window.pos.length; i++){
+                    var po = new ProductOwner(window.pos[i].name, window.pos[i].Id, window.pos[i].emailId, window.pos[i].contact);
+                    allPOs.push(po);
+                }
+
+
+
+                //QAs
+
+                //Man
+
+                //SM
+           
+                //PO
+
+
             function addToPage(objects, domId) {
 
                     for (var i = 0; i < objects.length; i++) {
                         var tr = document.createElement("tr");
                         tr.innerHTML = "<td>"+ objects[i].getName() + "</td>" + "<td>" + objects[i].getContact() + "</td>"+ "<td>" + objects[i].getType() + "</td>" ;
                         tr.id = objects[i].getId();
-                        tr.className= objects[i].getType()+"-child";
+                        tr.className= objects[i].getType()+"child";
                         document.getElementById(domId).appendChild(tr);
                     }
             }
@@ -68,7 +86,7 @@
                addToPage(allDevs, "devcontainer");
                addToPage(allQAs,"qacontainer");
                addToPage(allMnrs, "mngrcontainer");
-               addToPage(allscrms, "scrummasters");
+               addtoPage(allPOs, "pocontainer")
 
             }</script>
 
@@ -102,16 +120,31 @@
         </div>
     </div>
     <div>
-        All  SMs are here
-        <div id="scrumMaster">
-            
-        </div>
-    </div>
+        <div>All  SMs are here</div>
+        <table style="width:100%" id="devcontainer">
+            <tr>
+                <th>Name</th>
+                <th>Conact-Info</th>
+                <th>Type</th>
+                
+            </tr>
 
+        </table>
+            
+    </div>
+    
     <div>
-        All Managers are here
-        <div id="mngrcontainer">
-        </div>
+        <div>All POs are here</div>
+        <table style="width:100%" id="pocontainer">
+            <tr>
+                <th>Name</th>
+                <th>Conact-Info</th>
+                <th>Type</th>
+                
+            </tr>
+
+        </table>
     </div>
 </body>
+
 </html>

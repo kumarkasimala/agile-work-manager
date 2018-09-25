@@ -73,6 +73,12 @@ Employee.call(this, name, Id, emailId, contact, "Manager");
 Manager.prototype = Object.create(Employee.prototype);
 Manager.prototype.constructor = Employee;
 
+function ProductOwner(name, Id, emailId,contact){
+  Employee.call(this, name, Id, emailId, contact, "PO");
+}
+ProductOwner.prototype = Object.create(Employee.prototype);
+ProductOwner.prototype.constructor = Employee;
+
 //Suraj [QA, Manager], Sandeep : SM, PO.
 
 //Hi i am narender
