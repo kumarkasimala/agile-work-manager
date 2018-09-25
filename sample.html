@@ -35,6 +35,7 @@
     <script type="text/javascript">var allDevs = [];
                 var allMnrs = [];
                 var allQAs = [];
+                var allscrms =[];
 
                 for (var i = 0; i < window.devs.length; i++) {
                     var dev = new DevEngineer(window.devs[i].name, window.devs[i].Id, window.devs[i].emailId, window.devs[i].contact);
@@ -48,18 +49,10 @@
                     var mngr = new Manager(window.mngrs[i].name, window.mngrs[i].Id, window.mngrs[i].emailId, window.mngrs[i].contact);
                     allMnrs.push(mngr);
                 }
-
-
-
-                //QAs
-
-                //Man
-
-                //SM
-           
-                //PO
-
-
+                for (var i = 0; i < window.scrm.length; i++) {
+                    var scrm = new scrumManager(window.scrm[i].name, window.scrm[i].Id, window.scrm[i].emailId, window.scrm[i].contact);
+                    allscrms.push(scrm);
+              
             function addToPage(objects, domId) {
 
                     for (var i = 0; i < objects.length; i++) {
@@ -75,6 +68,7 @@
                addToPage(allDevs, "devcontainer");
                addToPage(allQAs,"qacontainer");
                addToPage(allMnrs, "mngrcontainer");
+               addToPage(allscrms, "scrummasters");
 
             }</script>
 
@@ -97,23 +91,27 @@
     <div>
        <div class="title">All QAs are here</div> 
         <div id="qacontainer">
+                <table style="width:100%" id="qacontainer">
+                        <tr>
+                            <th>Name</th>
+                            <th>Contact</th> 
+                            <th>Type</th>
+                        </tr>
+                    </table>
+
         </div>
     </div>
-<<<<<<< HEAD
-
     <div>
         All  SMs are here
-        <div id="SMcontainer">
+        <div id="scrummasters">
             
         </div>
     </div>
 
-=======
     <div>
         All Managers are here
         <div id="mngrcontainer">
         </div>
     </div>
->>>>>>> c2f02e1613637a2180000cf37febe05b1882a5fe
 </body>
 </html>

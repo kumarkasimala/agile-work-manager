@@ -11,7 +11,6 @@ function User(name, Id, emailId, contact, type) {
     var Id = Id;
     var contact = contact;
     var type = type;
-
     var age;
     var emailId = emailId;
     var address;
